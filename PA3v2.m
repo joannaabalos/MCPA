@@ -30,6 +30,8 @@ for t=1:100
     
     storeV1(t) = v1;
     storeV2(t) = v2;
+    driftV1 = mean(storeV1);
+    driftV2 = mean(storeV2);
     driftV = mean(storeV1+storeV2);
 
     
@@ -43,7 +45,7 @@ for t=1:100
 
     subplot(2,1,2);
     hold all
-    plot(t,v1,'ro',t,driftV,'go',t,v2,'ro');
+    plot(t,v1,'ro',t,driftV1,'go',t,v2,'bo',t,driftV1);
     xlabel('Time (s)')
     ylabel('Average Drift Velocity (m/s)')
     pause(.01)
